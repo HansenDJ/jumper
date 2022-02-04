@@ -8,10 +8,11 @@ namespace Game
         //string guessWord = "G _ _ _ _";
         char guessedLetter = '_';
 
+        // Make an instance of Guess class.
         Guess guess = new Guess();
         
         // Display all frames.
-        private void mainDisplay()
+        public void mainDisplay()
         {
             parachuteDisplay();
             //firstFrame(guess.guessWord);
