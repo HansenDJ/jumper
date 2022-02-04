@@ -5,29 +5,26 @@ namespace Game
 {
     public class TerminalService
     {
-        //string guessWord = "G _ _ _ _";
         char guessedLetter = '_';
 
-        // Make an instance of Guess class.
-        Guess guess = new Guess();
-        
         // Display all frames.
-        public void mainDisplay()
+        /* public void mainDisplay()
         {
             parachuteDisplay();
-            //firstFrame(guess.guessWord);
-            //nextFrame(guess.guessWord);
+            firstFrame(guess.hashedWord);
+            nextFrame(guess.hashedWord);
 
-        }
-        public char getGuess() {
+        } */
+        public char getGuess()
+        {
             return guessedLetter;
         }
-        
+
         // Choose which parachute image to display.
         private string parachuteDisplay()
         {
-            
-            Console.WriteLine(@"
+
+            string parachuteString = (@"
   ___
  /___\
  \   /
@@ -35,9 +32,9 @@ namespace Game
    O
   /|\
   / \");
-            return parachuteDisplay();
+            return parachuteString;
         }
-        
+
         // Display initial frame.
         private void firstFrame(string guessWord)
         {
@@ -46,7 +43,7 @@ namespace Game
 ^^^^^^^
 ");
         }
-        
+
         // Displays graphics for one turn.
         public void nextFrame(string guessWord) // Parameters: 
         {
@@ -56,6 +53,7 @@ namespace Game
 {parachuteDisplay()}
 ^^^^^^^
 ");
+
         }
     }
 }
