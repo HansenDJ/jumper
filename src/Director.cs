@@ -6,7 +6,6 @@ namespace Game
 
     public class Director
     {
-        TerminalService terminalService = new TerminalService ();
         public static bool playingNow = true;
         public void StartGame()
         {
