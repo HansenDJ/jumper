@@ -12,7 +12,7 @@ namespace Game
             
             while (playingNow) // Call methods and functions from here, infinite loop until PlayNow is false;
             {
-                
+               
             }
 
         }
