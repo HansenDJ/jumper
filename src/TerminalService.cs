@@ -6,7 +6,7 @@ namespace Game
     public class TerminalService
     {
         // Checks if all the letters in the word have been guessed correctly.
-        wordGuessed = false;
+        bool wordGuessed = false;
         
         // Display initial frame.
         private void firstFrame(string guessWord)
