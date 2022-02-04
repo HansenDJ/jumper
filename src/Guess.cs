@@ -4,7 +4,9 @@ using System.Collections.Generic;
 namespace Game;
 class Guess
 {   
-    private string generateWord() {
+    List<char> wordHashed = new List<char>();
+    
+        private string generateWord() {
       string line = File.ReadLines("wordList.txt").ElementAt(randomNumber());
         return line;
     }
@@ -13,6 +15,12 @@ class Guess
 
         return random.Next(1,1000);
 
+    }
+    private void generateHash(int wordLength) {
+        wordHashed.Clear();
+        for(int i = 0; i < wordLength; i++) {
+            wordHashed.Add('_');
+        }
     }
     
     public string getWord(){
@@ -24,6 +32,7 @@ class Guess
         if (length >= 3)
         {
            conditionmet = true;
+           generateHash(length);
         }
     }
     return currentWord;
