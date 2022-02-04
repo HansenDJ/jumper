@@ -5,6 +5,14 @@ namespace Game;
 class Guess
 {   
     List<char> wordHashed = new List<char>();
+
+    public string getHashedWord() {
+        string hashedWord = "";
+        for(int i = 0; i < wordHashed.ToArray().Length;i++) {
+            hashedWord += wordHashed.ElementAt(i);
+        }
+        return hashedWord;
+    }
     
         private string generateWord() {
       string line = File.ReadLines("wordList.txt").ElementAt(randomNumber());
