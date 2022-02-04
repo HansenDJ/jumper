@@ -14,6 +14,14 @@ class Guess
         }
         return hashedWord;
     }
+    public void letterCheck(char inputLetter) {
+         for(int i = 0; i < wordHashed.ToArray().Length;i++) {
+            if(inputLetter == wordComplete[i]) {
+                wordHashed[i] = inputLetter;
+            }
+        }
+
+    }
     
         private string generateWord() {
       string line = File.ReadLines("wordList.txt").ElementAt(randomNumber());
