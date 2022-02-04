@@ -26,6 +26,7 @@ namespace Game
         // Choose which parachute image to display.
         private string parachuteDisplay()
         {
+            
             Console.WriteLine(@"
   ___
  /___\
@@ -58,3 +59,4 @@ namespace Game
         }
     }
 }
+//

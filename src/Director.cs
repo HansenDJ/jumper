@@ -6,10 +6,12 @@ namespace Game
 
     public class Director
     {
-        TerminalService terminalService = new TerminalService ();
         public static bool playingNow = true;
         public void StartGame()
         {
+            // Create instance of TerminalService class.
+            TerminalService terminalService = new TerminalService();
+
             /* Example Get Word
             
             string word = guess.getWord();
