@@ -36,9 +36,6 @@ namespace Game
             return parachuteDisplay();
         }
         
-        // Checks if all the letters in the word have been guessed correctly.
-        bool wordGuessed = false;
-        
         // Display initial frame.
         private void firstFrame(string guessWord)
         {
