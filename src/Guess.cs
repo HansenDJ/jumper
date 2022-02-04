@@ -5,6 +5,7 @@ namespace Game;
 class Guess
 {   
     List<char> wordHashed = new List<char>();
+    string wordComplete = "";
 
     public string getHashedWord() {
         string hashedWord = "";
@@ -12,6 +13,14 @@ class Guess
             hashedWord += wordHashed.ElementAt(i);
         }
         return hashedWord;
+    }
+    public void letterCheck(char inputLetter) {
+         for(int i = 0; i < wordHashed.ToArray().Length;i++) {
+            if(inputLetter == wordComplete[i]) {
+                wordHashed[i] = inputLetter;
+            }
+        }
+
     }
     
         private string generateWord() {
@@ -41,6 +50,7 @@ class Guess
         {
            conditionmet = true;
            generateHash(length);
+           wordComplete = currentWord;
         }
     }
     return currentWord;
