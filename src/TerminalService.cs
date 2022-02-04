@@ -5,6 +5,37 @@ namespace Game
 {
     public class TerminalService
     {
+        //string guessWord = "G _ _ _ _";
+        char guessedLetter = '_';
+
+        Guess guess = new Guess();
+        
+        // Display all frames.
+        private void mainDisplay()
+        {
+            parachuteDisplay();
+            //firstFrame(guess.guessWord);
+            //nextFrame(guess.guessWord);
+
+        }
+        public char getGuess() {
+            return guessedLetter;
+        }
+        
+        // Choose which parachute image to display.
+        private string parachuteDisplay()
+        {
+            Console.WriteLine(@"
+  ___
+ /___\
+ \   /
+  \ /
+   O
+  /|\
+  / \");
+            return parachuteDisplay();
+        }
+        
         // Checks if all the letters in the word have been guessed correctly.
         bool wordGuessed = false;
         
@@ -12,14 +43,7 @@ namespace Game
         private void firstFrame(string guessWord)
         {
             Console.WriteLine($@"{guessWord}
-
-  ___
- /___\
- \   /
-  \ /
-   O
-  /|\
-  / \
+{parachuteDisplay()}
 ^^^^^^^
 ");
         }
@@ -30,14 +54,7 @@ namespace Game
             Console.WriteLine("Guess a letter [a-z]: ");
             Console.ReadLine();
             Console.WriteLine($@"{guessWord}
-
-  ___
- /___\
- \   /
-  \ /
-   O
-  /|\
-  / \
+{parachuteDisplay()}
 ^^^^^^^
 ");
         }
