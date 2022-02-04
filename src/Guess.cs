@@ -5,6 +5,7 @@ namespace Game;
 class Guess
 {   
     List<char> wordHashed = new List<char>();
+    string wordComplete = "";
 
     public string getHashedWord() {
         string hashedWord = "";
@@ -41,6 +42,7 @@ class Guess
         {
            conditionmet = true;
            generateHash(length);
+           wordComplete = currentWord;
         }
     }
     return currentWord;
