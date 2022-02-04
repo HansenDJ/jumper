@@ -2,7 +2,7 @@
 namespace Game;
 class Jumper
 {
-    int mistakes = 10;
+    int mistakes = 8;
 
     public void decreeseMistakeCount()
     {

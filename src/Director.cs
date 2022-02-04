@@ -6,12 +6,12 @@ namespace Game
 
     public class Director
     {
+        
         public static bool playingNow = true;
         public void StartGame()
         {
-            // Create instance of TerminalService class.
-            TerminalService terminalService = new TerminalService();
-
+            // Create instance of TerminalService class
+            TerminalService terminalService = new TerminalService ();
             /* Example Get Word
             Guess guess = new Guess();
             string word = guess.getWord();
@@ -22,6 +22,7 @@ namespace Game
             while (playingNow) // Call methods and functions from here, infinite loop until PlayNow is false;
             {
               terminalService.mainDisplay();
+              
             }
 
         }
