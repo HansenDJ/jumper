@@ -1,11 +1,12 @@
 ﻿using Game;
 
 namespace Game;
-class Program
+
+internal class Program
 {
-    static void Main(string[] args)
-        {
-            Director director = new Director();
-            director.StartGame();
-        }
+    private static void Main(string[] args)
+    {
+        var director = new Director();
+        director.StartGame();
+    }
 }

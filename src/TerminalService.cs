@@ -1,122 +1,152 @@
 using System;
 using System.Collections.Generic;
 
-namespace Game
+namespace Game;
+
+public class TerminalService
 {
-    public class TerminalService
+    private char guessedLetter = '_';
+
+    // Display all frames.
+    /* public void mainDisplay()
     {
-        char guessedLetter = '_';
+        parachuteDisplay();
+        firstFrame(guess.hashedWord);
+        nextFrame(guess.hashedWord);
 
-        // Display all frames.
-        /* public void mainDisplay()
+    } */
+    public char getGuess()
+    {
+        return guessedLetter;
+    }
+
+    // Choose which parachute image to display.
+    private string parachuteDisplay()
+    {
+        // Create an instance of the Jumper class
+
+        var parachuteString = "";
+
+        switch (Jumper.mistakes)
         {
-            parachuteDisplay();
-            firstFrame(guess.hashedWord);
-            nextFrame(guess.hashedWord);
-
-        } */
-        public char getGuess()
-        {
-            return guessedLetter;
-        }
-
-        // Choose which parachute image to display.
-        private string parachuteDisplay()
-        {
-            // Create an instance of the Jumper class.
-            Jumper jumper = new Jumper();
-            
-            string parachuteString = "";
-
-            switch(jumper.mistakes)
-            {
-                case 0:
-                    parachuteString = (@"
+            case 0:
+                parachuteString = @"
    x
   /|\
-  / \");
-                    break;
-                case 1:
-                    parachuteString = (@"
+  / \
+You Died, type any letter to play again";
+
+
+                break;
+            case 1:
+                parachuteString = @"
   \ /
    O
   /|\
-  / \");
-                    break;
-                case 2:
-                    parachuteString = (@"
+  / \";
+                break;
+            case 2:
+                parachuteString = @"
  \   /
   \ /
    O
   /|\
-  / \");
-                    break;
-                case 3:
-                    parachuteString = (@"
+  / \";
+                break;
+            case 3:
+                parachuteString = @"
  /   \
  \   /
   \ /
    O
   /|\
-  / \");
-                    break;
-                case 4:
-                    parachuteString = (@"
+  / \";
+                break;
+            case 4:
+                parachuteString = @"
  /___\
  \   /
   \ /
    O
   /|\
-  / \");
-                    break;
-                case 5:
-                    parachuteString = (@"
+  / \";
+                break;
+            case 5:
+                parachuteString = @"
   ___
  /___\
  \   /
   \ /
    O
   /|\
-  / \");
-                    break;
-                
-            }
-            return parachuteString;
+  / \";
+                break;
         }
 
-        // Display initial frame.
-        public void firstFrame(string hashedWord)
-        {
-            Console.WriteLine($@"       
+        return parachuteString;
+    }
+
+    public void died(string word)
+    {
+        Console.WriteLine("The word was: " + word);
+    }
+
+    public void victoryFrame()
+    {
+        Console.WriteLine("You Win! type any letter to play again");
+
+        var readChar = Console.ReadKey().KeyChar;
+        Director.restart = true;
+    }
+
+    // Display initial frame.
+    public void firstFrame(string hashedWord)
+    {
+        Console.WriteLine($@"       
 {hashedWord}
 
 {parachuteDisplay()}
 
 ^^^^^^^
 ");
-        }
+    }
 
-        // Displays graphics for one turn.
-        public void nextFrame(string hashedWord) // Parameter hashedWord is the string of the correct letters and underscores. 
+    // Displays graphics for one turn.
+    public void
+        nextFrame(string hashedWord) // Parameter hashedWord is the string of the correct letters and underscores. 
+    {
+        if (Guess.GuessedWord)
+        {
+            victoryFrame();
+        }
+        else if (Jumper.mistakes > 0)
         {
             char ch;
             bool isTypeChar;
-            
-            Console.WriteLine("Guess a letter [a-z]: ");
-
-            // Set to true if input is a single character.
-            // Set to false if input is any other data type.
-            isTypeChar = Char.TryParse(Console.ReadLine(), out ch);
-            if (isTypeChar == true)
-            {
-                Console.WriteLine($@"
+            Console.WriteLine($@"
 {hashedWord}
 
 {parachuteDisplay()}
 
 ^^^^^^^
 ");
-            }
+
+            Console.WriteLine("Guess a letter [a-z]: ");
+
+
+            // Set to true if input is a single character.
+            // Set to false if input is any other data type.
+
+            var readChar = Console.ReadKey().KeyChar;
+            guessedLetter = readChar;
+            Console.Clear();
+        }
+        else
+        {
+            Console.WriteLine(parachuteDisplay());
+            var readChar = Console.ReadKey().KeyChar;
+            Console.Clear();
+            Director.restart = true;
         }
     }
 }
