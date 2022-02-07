@@ -7,14 +7,6 @@ public class TerminalService
 {
     private char guessedLetter = '_';
 
-    // Display all frames.
-    /* public void mainDisplay()
-    {
-        parachuteDisplay();
-        firstFrame(guess.hashedWord);
-        nextFrame(guess.hashedWord);
-
-    } */
     public char getGuess()
     {
         return guessedLetter;
