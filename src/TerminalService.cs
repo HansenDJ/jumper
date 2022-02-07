@@ -99,21 +99,8 @@ You Died, type any letter to play again";
         Director.restart = true;
     }
 
-    // Display initial frame.
-    public void firstFrame(string hashedWord)
-    {
-        Console.WriteLine($@"       
-{hashedWord}
-
-{parachuteDisplay()}
-
-^^^^^^^
-");
-    }
-
     // Displays graphics for one turn.
-    public void
-        nextFrame(string hashedWord) // Parameter hashedWord is the string of the correct letters and underscores. 
+    public void nextFrame(string hashedWord) // Parameter hashedWord is the string of the correct letters and underscores. 
     {
         if (Guess.GuessedWord)
         {
@@ -121,8 +108,7 @@ You Died, type any letter to play again";
         }
         else if (Jumper.mistakes > 0)
         {
-            char ch;
-            bool isTypeChar;
+           
             Console.WriteLine($@"
 {hashedWord}
 
@@ -132,11 +118,6 @@ You Died, type any letter to play again";
 ");
 
             Console.WriteLine("Guess a letter [a-z]: ");
-
-
-            // Set to true if input is a single character.
-            // Set to false if input is any other data type.
-
             var readChar = Console.ReadKey().KeyChar;
             guessedLetter = readChar;
             Console.Clear();

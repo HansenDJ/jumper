@@ -13,7 +13,7 @@ public class Director
         // Create instance of TerminalService class
         var terminalService = new TerminalService();
         /* Example Get Word
-        
+         
         string word = guess.getWord();
         Console.WriteLine(word);
         Console.WriteLine(guess.getHashedWord());
@@ -44,8 +44,6 @@ public class Director
                 Guess.GuessedWord = false;
             }
 
-
-            // terminalService.mainDisplay();
         }
     }
 }
