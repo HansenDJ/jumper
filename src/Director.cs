@@ -12,12 +12,6 @@ public class Director
     {
         // Create instance of TerminalService class
         var terminalService = new TerminalService();
-        /* Example Get Word
-         
-        string word = guess.getWord();
-        Console.WriteLine(word);
-        Console.WriteLine(guess.getHashedWord());
-        */
         var guess = new Guess();
         guess.getWord();
         var jumper = new Jumper();
@@ -32,13 +26,13 @@ public class Director
                 restart = false;
             }
 
-            if (!Guess.GuessedWord)
+            if (!Guess.GuessedWord) // If the word isn't guessed
             {
                 if (Jumper.mistakes == 0) terminalService.died(guess.wordComplete);
                 terminalService.nextFrame(guess.getHashedWord());
                 if (!guess.letterCheck(terminalService.getGuess())) jumper.decreeseMistakeCount();
             }
-            else
+            else // If the word is guessed
             {
                 terminalService.nextFrame(guess.getHashedWord());
                 Guess.GuessedWord = false;

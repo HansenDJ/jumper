@@ -6,12 +6,12 @@ internal class Jumper
 {
     public static int mistakes = 5;
 
-    public void decreeseMistakeCount()
+    public void decreeseMistakeCount() // when a player misses a word
     {
         mistakes--;
     }
 
-    public static void resetLife()
+    public static void resetLife() // when a game is restart the life is reset
     {
         mistakes = 5;
     }
