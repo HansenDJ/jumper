@@ -30,7 +30,7 @@ public class Director
             {
                 if (Jumper.mistakes == 0) terminalService.died(guess.wordComplete);
                 terminalService.nextFrame(guess.getHashedWord());
-                if (!guess.letterCheck(terminalService.getGuess())) jumper.decreeseMistakeCount();
+                if (!guess.letterCheck(terminalService.getGuess())) jumper.decreaseMistakeCount();
             }
             else // If the word is guessed
             {

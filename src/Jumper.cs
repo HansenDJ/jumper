@@ -6,7 +6,7 @@ internal class Jumper
 {
     public static int mistakes = 5;
 
-    public void decreeseMistakeCount() // when a player misses a word
+    public void decreaseMistakeCount() // when a player misses a word
     {
         mistakes--;
     }
