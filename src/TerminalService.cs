@@ -7,6 +7,7 @@ public class TerminalService
 {
     private char guessedLetter = '_';
 
+    // Method to be called in the Director to update the guessedLetter variable.
     public char getGuess()
     {
         return guessedLetter;
@@ -15,8 +16,6 @@ public class TerminalService
     // Choose which parachute image to display.
     private string parachuteDisplay()
     {
-        // Create an instance of the Jumper class
-
         var parachuteString = "";
 
         switch (Jumper.mistakes)
@@ -83,6 +82,7 @@ You Died, type any letter to play again";
         Console.WriteLine("The word was: " + word);
     }
 
+    // Displays that you won the game if your guessed the word correctly.
     public void victoryFrame()
     {
         Console.WriteLine("You Win! type any letter to play again");
@@ -91,7 +91,7 @@ You Died, type any letter to play again";
         Director.restart = true;
     }
 
-    // Displays graphics for one turn.
+    // Displays graphics each guess.
     public void nextFrame(string hashedWord) // Parameter hashedWord is the string of the correct letters and underscores. 
     {
         if (Guess.GuessedWord)
