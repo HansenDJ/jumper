@@ -26,13 +26,13 @@ public class Director
                 restart = false;
             }
 
-            if (!Guess.GuessedWord)
+            if (!Guess.GuessedWord) // If the word isn't guessed
             {
                 if (Jumper.mistakes == 0) terminalService.died(guess.wordComplete);
                 terminalService.nextFrame(guess.getHashedWord());
                 if (!guess.letterCheck(terminalService.getGuess())) jumper.decreeseMistakeCount();
             }
-            else
+            else // If the word is guessed
             {
                 terminalService.nextFrame(guess.getHashedWord());
                 Guess.GuessedWord = false;
